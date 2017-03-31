@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-1.11.0.min.js">
+		</script>
+		<script type="text/javascript" src="../js/jquery.zoom.min.js">
+		</script>
+		<style type="text/css">
+			img{
+				width: 300px;
+			}
+			.zoom{
+				display: inline-block;
+				position: relative;
+				border: 1px solid #090;
+				cursor: pointer;
+			}
+			.zoom img{
+				display: block;
+			}
+			.zoom img::selection { background-color: transparent; }
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				$("#ex1").zoom({on:"click"});
+				$("#ex2").zoom();
+			});
+		</script>
+	</head>
+	<body>
+		<span id="ex1" class="zoom"><img src="images/daisy.jpg"/></span>
+		<span id="ex2" class="zoom"><img src="images/roxy.jpg"/></span>
+	</body>
+</html>

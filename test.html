@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		canvas{
+			border: 1px solid #090;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var c=document.getElementById("mycanvas");
+			var context=c.getContext("2d");
+			context.fillStyle="#f00";
+			context.strokeStyle="#000";
+			context.lineWidth=4;
+			context.beginPath();
+			context.moveTo(100,110);
+			context.lineTo(300,110);
+			context.lineTo(300,310);
+			context.lineTo(100,310);
+			context.lineTo(100,110);
+			context.moveTo(150,51);
+			context.lineTo(250,51);
+			context.lineTo(300,110);
+			context.lineTo(100,110);
+			context.lineTo(150,51);
+			context.moveTo(300,110)
+			context.lineTo(330,60);
+			context.lineTo(330,230);
+			context.lineTo(300,310);
+			context.moveTo(250,51);
+			context.lineTo(330,60);
+			context.lineTo(300,110);
+			context.fill();
+			context.stroke();
+			context.closePath();
+			context.fillStyle="#090";
+			context.strokeStyle="#000";
+			context.beginPath();
+			context.moveTo(260,310);
+			context.lineTo(210,310);
+			context.lineTo(210,230);
+			context.lineTo(260,230);
+			context.lineTo(260,310);
+			context.moveTo(110,140);
+			context.lineTo(170,140);
+			context.lineTo(170,200);
+			context.lineTo(110,200);
+			context.lineTo(110,140);
+			context.moveTo(110,170);
+			context.lineTo(170,170);
+			context.moveTo(140,140);
+			context.lineTo(140,200);
+			context.moveTo(290,30);
+			context.lineTo(310,30);
+			context.lineTo(310,56);
+			context.lineTo(290,54);
+			context.lineTo(290,30);
+			context.fill();
+			context.stroke();
+			context.closePath();
+			context.fillStyle="#909";
+			context.strokeStyle="#000";
+			context.beginPath();
+			context.arc(251,270,5,0,Math.PI*2,true);
+			context.closePath();
+			context.fill();
+			context.stroke();
+		};
+	</script>
+</head>
+<body>
+	<canvas id="mycanvas" width="600" height="3100">
+	</canvas>
+</body>
+</html>

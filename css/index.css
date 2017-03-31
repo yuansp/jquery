@@ -1,0 +1,65 @@
+@charset "utf-8";
+*{
+	margin: 0px;
+	padding: 0px;
+}
+ul,li{
+	list-style: none;
+}
+.scrollBanner{
+	position: relative;
+	overflow: hidden;
+	width: 1000px;
+	height: 302px;
+	margin: 0 auto;
+}
+.bannerBox{
+	position: absolute;
+	width: 4000px;
+	height: 302px;
+	
+}
+.bannerBox li{
+	float: left;
+}
+.bannerBox li a{
+	font-size: 60px;
+}
+.bannerBox li a img{
+	width: 1000px;
+	height: 302px;
+	display: block;
+}
+.scrollBanner .arr_left{
+	position: absolute;
+	display: inline-block;
+	top: 90px;left: 10px;
+	width:10px;height: 200px;
+	background: url(../img/icon1.jpg)no-repeat;
+	cursor: pointer;
+	z-index: 100;
+}
+.scrollBanner .arr_right{
+	position: absolute;
+	display: inline-block;
+	top: 90px;right: 10px;
+	width:10px;height: 200px;
+	background: url(../img/icon2.jpg)no-repeat;
+	cursor: pointer;
+	z-index: 100;
+}
+.scrollBanner .scroll_num{
+	position: absolute;
+	top:285px;left: 50%;
+	margin-left: -35px;
+}
+.scrollBanner .scroll_num span{
+	width: 16px;height: 16px;
+	display: inline-block;
+	background: url(../img/dot.png) no-repeat;
+	cursor: pointer;
+	margin-left: 4px;
+}
+.scrollBanner .scroll_num span.current{
+	background: url(../img/dotActive.png) no-repeat;
+}

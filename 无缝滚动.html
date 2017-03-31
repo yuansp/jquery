@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>无缝滚动</title>
+	<style type="text/css">
+		#div1{
+			border: 3px solid #f00;
+			width: 942px;
+			height: 130px;
+			overflow: hidden;
+			position: relative;
+		}
+		#div1 img{
+			position: relative;
+		}
+		#div1 ul{
+			margin: 0px;
+			padding: 0px;
+			list-style: none;
+			position: relative;
+		}
+		#div1  li{
+			float: left;
+			position: absolute;
+			width: 142px;
+			text-align: center;
+		}
+		#div1  a{
+			font: 14px/1.5em 微软雅黑;
+			color: #ccc;
+			text-decoration: none;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-1.11.0.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#div1 li").each(function(index,element){
+				$(this).css({"left":index*157+"px"});
+			});
+			var sid;
+			function move(){
+				sid=setInterval(function(){
+					$("#div1 li").css({"left":"-=1px"});
+					if($("#div1 li:eq(5)").position().left<=-157){
+						$("#div1 li:lt(6)").each(function(index,element){
+							$(this).css({"left":(index*157)+942+"px"});
+						});
+					}
+					if($("#div1 li:eq(11)").position().left<=-157){
+						$("#div1 li:gt(5)").each(function(index,element){
+							$(this).css({"left":(index*157)+942+"px"});
+						});
+					}
+				},20);
+			}
+			move();
+			$("#div1").mouseover(function(){
+				clearInterval(sid);
+			});
+			$("#div1").mouseout(function(){
+				move();
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="div1">
+		<ul>
+			<li><a href="#"><img src="images/jjx1.jpg"><br>房子1</a></li>
+			<li><a href="#"><img src="images/jjx2.jpg"><br>房子2</a></li>
+			<li><a href="#"><img src="images/jjx3.jpg"><br>房子3</a></li>
+			<li><a href="#"><img src="images/jjx4.jpg"><br>房子4</a></li>
+			<li><a href="#"><img src="images/jjx5.jpg"><br>房子5</a></li>
+			<li><a href="#"><img src="images/jjx6.jpg"><br>房子6</a></li>
+			<li><a href="#"><img src="images/jjx1.jpg"><br>房子1</a></li>
+			<li><a href="#"><img src="images/jjx2.jpg"><br>房子2</a></li>
+			<li><a href="#"><img src="images/jjx3.jpg"><br>房子3</a></li>
+			<li><a href="#"><img src="images/jjx4.jpg"><br>房子4</a></li>
+			<li><a href="#"><img src="images/jjx5.jpg"><br>房子5</a></li>
+			<li><a href="#"><img src="images/jjx6.jpg"><br>房子6</a></li>
+		</ul>
+	</div>	
+</body>
+</html>
